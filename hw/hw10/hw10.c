@@ -13,17 +13,17 @@ void swap(char *a,char *b)
 
 void selectionsort(char B[row][col],int n)
 {
-    int i,j,min;
-    for(i=0;i<n-1;i++)
+    int i,j,max;
+    for(i=n-1;i>0;i--)
     {   
-        min=i;
-        for(j=i;j<n;j++)
+        max=i;
+        for(j=i;j>=0;j--)
         {
-            if(strcmp(B[j],B[min])==-1)
-            min=j;
+            if(strcmp(B[j],B[max])==1)
+            max=j;
         }
-        if(min!=i)
-        swap(B[i],B[min]);
+        if(max!=i)
+        swap(B[i],B[max]);
     }
 }
 
