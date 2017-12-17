@@ -1,8 +1,8 @@
 #include<stdio.h>
 #include<string.h>
 #include<stdlib.h>
-#define row 1001
-#define col 1001
+#define row 1002
+#define col 1002
 void swap(char *a,char *b)
 {
     char tmp[col];
@@ -13,17 +13,17 @@ void swap(char *a,char *b)
 
 void selectionsort(char B[row][col],int n)
 {
-    int i,j,min;
-    for(i=0;i<n-1;i++)
+    int i,j,max;
+    for(i=n-1;i>0;i--)
     {   
-        min=i;
-        for(j=i;j<n;j++)
+        max=i;
+        for(j=i;j>=0;j--)
         {
-            if(strcmp(B[j],B[min])==-1)
-            min=j;
+            if(strcmp(B[j],B[max])>0)
+            max=j;
         }
-        if(min!=i)
-        swap(B[i],B[min]);
+        if(max!=i)
+        swap(B[i],B[max]);
     }
 }
 
@@ -35,5 +35,10 @@ int main(){
     selectionsort(B,n);
     for(i=0;i<n;i++)
     printf("%s",B[i]);
-    return 0;
+
+    /*char a[3][8]={"banana","jack"};
+    for(i=0;i<2;i++)
+    	printf("%s\n",a[i]);
+    printf("%d\n",strcmp(a[0],a[1]));
+    */return 0;
 }
