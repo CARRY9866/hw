@@ -11,7 +11,6 @@ void swap(char *a,char *b)
     strcpy(b,tmp);
 }
 
-
 void selectionsort(char B[row][col],int n)
 {
     int i,j,min;
