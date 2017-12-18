@@ -1,8 +1,8 @@
 #include<stdio.h>
 #include<string.h>
 #include<stdlib.h>
-#define row 1002
-#define col 1002
+#define row 1100
+#define col 1100
 void swap(char *a,char *b)
 {
     char tmp[col];
