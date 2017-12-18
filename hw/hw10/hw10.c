@@ -11,7 +11,7 @@ void swap(char *a,char *b)
     strcpy(b,tmp);
 }
 
-void selectionsort(char B[row][col],int n)
+void selectionsort(char *B[row],int n)
 {
     int i,j,max;
     for(i=n-1;i>0;i--)
@@ -29,9 +29,15 @@ void selectionsort(char B[row][col],int n)
 
 int main(){
 
-    char B[row][col];
+    char *B[row];
+    char tmp[col];
     int i,n=0;
-    while(fgets(B[n],col,stdin))n++;
+    while(fgets(tmp,col,stdin))
+    {
+        n++;
+        B[n]=(char*)malloc(sizeof(char)*col);
+        strcpy(B[n],tmp);
+    }
     selectionsort(B,n);
     for(i=0;i<n;i++)
     printf("%s",B[i]);
